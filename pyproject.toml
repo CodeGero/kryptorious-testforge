@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kryptorious-testforge"
+version = "1.1.0"
+description = "Automated pytest test generation from Python source — generate, coverage, fixtures, mocks."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [{name = "Kryptorious Quantum Biosciences, Inc."}]
+dependencies = ["click>=8.0", "rich>=13.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "black>=23.0", "ruff>=0.1"]
+
+[project.scripts]
+testforge = "testforge.cli:main"
+
+[project.urls]
+Homepage = "https://devflow.sh"
+
+[tool.setuptools.packages.find]
+where = ["src"]
